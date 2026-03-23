@@ -88,4 +88,4 @@ def plot_final_dashboard(age, val, t_str):
     print("="*60)
 
 # รันฟังก์ชัน
-plot_final_dashboard(age, test_val, test_time)
+plot_final_dashboard(Age, Test_Value, Test_Time)
