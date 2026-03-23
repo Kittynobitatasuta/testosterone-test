@@ -17,12 +17,12 @@ col_in, col_space, col_out = st.columns([1, 0.1, 2])
 with col_in:
     st.subheader("📝 กรอกข้อมูลคนไข้")
     # ใส่ค่าเริ่มต้น (Default) เพื่อให้กราฟขึ้นทันทีที่เปิดเว็บ
-    age = st.number_input("อายุคนไข้ (ปี)", min_value=18, max_value=95, value=51)
-    test_val = st.number_input("ระดับ Testosterone (ng/mL)", min_value=0.0, max_value=15.0, value=4.34, step=0.01)
+    age = st.number_input("อายุคนไข้ (ปี)", min_value=18, max_value=95, value=18)
+    test_val = st.number_input("ระดับ Testosterone (ng/mL)", min_value=0.0, max_value=15.0, value=0.00, step=0.01)
     
     # ตัวเลือกเวลา
     times_list = [f"{h:02d}:{m:02d}" for h in range(24) for m in (0, 30)]
-    test_time = st.selectbox("เวลาที่เจาะเลือด", times_list, index=25) # Default 12:30
+    test_time = st.selectbox("เวลาที่เจาะเลือด", times_list, index=25) # Default 00:00
 
 # --- 3. ส่วน Logic และการคำนวณ ---
 # อ้างอิงเกณฑ์ Mean และ Amplitude ตามอายุ
