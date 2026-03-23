@@ -57,7 +57,7 @@ with col_out:
         ax.scatter(ph_decimal, test_val, color='red', s=180, edgecolor='black', zorder=5, label='Patient Result')
         ax.annotate(f' {test_val}', (ph_decimal, test_val), xytext=(10, 10), textcoords='offset points', fontweight='bold', fontsize=12)
 
-    ax.set_ylim(0, 11)
+    ax.set_ylim(0, 10.5)
     ax.set_xticks(np.arange(0, 25, 4))
     ax.set_xlabel("Time of Day (24h Scale)")
     ax.set_ylabel("Total Testosterone (ng/mL)")
@@ -75,13 +75,4 @@ else:
     current_expected = m + a * np.cos((ph_decimal - 8) * (2 * np.pi / 24))
     morning_est = (test_val / current_expected) * (m + a)
     
-    c1, c2 = st.columns(2)
-    with c1:
-        if test_val < 2.1:
-            st.error(f"**สถานะ:** ต่ำกว่าเกณฑ์มาตรฐาน (2.1 ng/mL)")
-        elif test_val < 3.0:
-            st.warning(f"**สถานะ:** ค่อนข้างต่ำ (Borderline)")
-        else:
-            st.success(f"**สถานะ:** ปกติสมวัย")
-    with c2:
-        st.info(f"🕒 **ค่าคาดการณ์ที่ 08:00 น.:** ประมาณ **{morning_est:.2f} ng/mL**")
+    c1, c2 =
